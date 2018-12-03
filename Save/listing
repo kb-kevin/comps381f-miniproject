@@ -1,0 +1,68 @@
+<% /* %><!--
+<html>
+   <head><title>Restaurant Listing</title></head>
+   <body>
+       <H2> YOU ARE LOGIN AS <%= userID %></H2>
+       <H4>Restaurant Listing</H4>
+       <br><br>
+       Name: <%= result[0].name %><br />
+       Borough: <%= result[0].borough %><br>
+       Cuisine: <%= result[0].cuisine %><br>
+       Building: <%= result[0].address.building %><br>
+       Street: <%= result[0].address.street %><br>
+       Zipcode: <%= result[0].address.zipcode %><br>
+       Coord: <%= result[0].address.coord %><br>
+       Grades<br>
+       Total:   <%=result[0].grades.length%> <br>
+       <% for (let i = 0; i < result[0].grades.length; i++) {%>
+       <%=i+1%>. User: <%= result[0].grades[i].user %> Score: <%= result[0].grades[i].score %><br>
+       <% } %>
+       Owner: <%= result[0].owner %>
+       <!--Photo: <%= result[0].photo %><br> -->
+       Photo mimetype: <%= result[0].photo_mimetype %><br>
+       
+
+      <br />
+      <br />
+      <a href="/update?id=<%= result[0]._id %>">Update Restaurant</a>
+      <% if (name == result[0].owner) { %>
+      <form method="post" action="/delete">
+        <input type="hidden" name="id" value="<%= result[0]._id %>">
+        <button type="submit" value="Delete">Delete</button>
+      </form>
+      <% } %>
+            <br />
+            <form method="post" action="/rate">
+        <input type="hidden" name="user" value="<%= name %>">
+        <input type="hidden" name="id" value="<%= result[0]._id %>">
+        Score ( 1 - 10 ) : <input type="text" name="score" >
+        <button type="submit" value="Rate">Rate</button>
+      </form>
+      <br />
+      <br />
+      <% if (result[0].address.coord != null || result[0].address.coord != undefined) { %>
+         <div id="map"></div>
+      <% } %>
+      
+     <script>
+      function initMap() {
+        var myLatLng = {lat: <%= lat %>, lng: <%= lng %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: myLatLng
+        });
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: '<%= result[0].name %>'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuBs8klyIP7EM7iiAondbPbCy000ibeTQ&callback=initMap">
+    </script>
+      <br />
+      <a href="/logout">Logout</a>
+   </body>
+</html>
+<% */ %>

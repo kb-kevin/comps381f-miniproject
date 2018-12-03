@@ -1,0 +1,14 @@
+<html>
+   <head><title>Search</title></head>
+   <body>
+      <br />
+      <ol>
+      <% for (let i = 0; i < result.length; i++) { %>
+         
+         <li><a href="/listing?id=<%= result[i]._id %>"><%= result[i].Name %></a></li>
+         
+      <% }%></ol>
+      <br />
+      <a href="/logout">Logout</a>
+   </body>
+</html>

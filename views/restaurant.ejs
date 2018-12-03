@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Create Restaurant</title>
+    </head>
+    <body>
+        <h1>Create Restaurant</h1>
+        <form role="form" method="post" action="/restaurant"  enctype="multipart/form-data" >
+            <table>
+                <tr>
+                    <td>
+                        <label>Restaurant ID</label>
+                    </td>
+                    <td>
+                        <input name = "id" readonly="true" type="text"  value="-----------------" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Name</label>
+                    </td>
+                    <td>
+                        <input name="name" type="text"  required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Borough</label>
+                    </td>
+                    <td>
+                        <input name="borough" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Cuisine</label>
+                    </td>
+                    <td>
+                        <input name="cuisine" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Photo</label>
+                    </td>
+                    <td>
+                        <input name="photo" type="file" accept="image/*">
+                    </td>
+                </tr>                
+                <tr>
+                    <td>
+                        <label>Photo Mimetype</label>
+                    </td>
+                    <td>
+                        <input name="photomimetype" readonly="true" type="text" value="---">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Street</label>
+                    </td>
+                    <td>
+                        <input name="Street" type="text">
+                    </td>
+                </tr>   
+                <tr>
+                    <td>
+                        <label>Building</label>
+                    </td>
+                    <td>
+                        <input name="building" type="text">
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        <label>ZIP Code</label>
+                    </td>
+                    <td>
+                        <input name="zipcode" type="text">
+                    </td>
+                </tr>                
+                <tr>
+                    <td>
+                        <label>Coord.Latitude</label>
+                    </td>
+                    <td>
+                        <input name="Latitude" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Coord.Longitude</label>
+                    </td>
+                    <td>
+                        <input name="Longitude" type="text">
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        <label>Owner</label>
+                    </td>
+                    <td>
+                       <input name="owner" readonly="true" type="text" value="-------------------------" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="Submit" >Create</button></td>
+                </tr>
+            </table>
+            
+            </form>
+    </body>
+</html>

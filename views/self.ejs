@@ -1,0 +1,41 @@
+<br>
+<div>
+    <div>
+        <div>
+            <div>
+            </div>
+        </div>
+    </div>
+    <div id="products">
+                <%  restaurants.forEach(function(restaurant) { %>
+                <div>
+                    <div>
+                        <div>
+                            <img src="data:image/png;base64, <%= restaurant.photo%>" alt="" />
+                        </div>
+                        <div>
+                            <h4>
+                                Name : <%= restaurant.Name %> </h4>
+                            <p>Name : <%= restaurant.Name %></p>
+                            <p>Borough : <%= restaurant.borough %></p>
+                            <p>cuisine : <%= restaurant.cuisine %></p>
+                            <p>Street : <%= restaurant.address.street %></p>
+                            <p>Building : <%= restaurant.address.building %></p>
+                            <p>Zipcode : <%= restaurant.address.zipcode %></p>
+                            <p>Coord : { <%= restaurant.address.Latitude %>  , <%= restaurant.address.Longitude %> } </p>
+                            <div>
+                                <div>
+                                    <a href="/self/edit?id=<%=restaurant.ID %>" >Edit</a>
+                                    
+                                    <a href="/self/delete?id=<%=restaurant.ID %>" >Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%   }) %>
+                </div>
+            </div>
+</div>
+<p> </p>
+<P>  </p>

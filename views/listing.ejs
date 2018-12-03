@@ -1,0 +1,145 @@
+
+<html>
+  <head>
+    <title>Restaurant</title>
+    <style>
+      img.resize {
+          max-width:50%;
+          max-height:50%;
+      } 
+    </style>
+  </head>
+      <h1>Restaurant</h1>
+      <span class="description">User:
+        <%=userID%> logined</span>
+        <span><form action="listing/logout" method="get"><button type="submit">Logout</button></form></span>
+    </div>
+  </div>
+<br>
+    <form action="/restaurant">
+      <button type = "submit">Create Restaurant</button>
+    </form>
+<center>
+  <form action="/self">
+      <button type = "submit">Check Restaurant</button>
+    </form>
+
+  <div>
+    <form role="form" method="get" action="listing/search">
+      <div>
+        <select type="text" name="key">
+          <option value="Name">Name</option>
+          <option value="borough">Borough</option>
+          <option value="cuisine">Cuisine</option>
+        </select>
+        <input type="text" name="value">
+        <div>
+          <input type="submit">
+        </div>
+      </div>
+    </form>
+    <br>
+  </div>
+
+</center> 
+
+<div>
+  <div>
+    <div>
+    </div>
+  </div>
+  <div id="products">
+
+    <% restaurants.forEach(function(restaurant) { %>
+    <div >
+      <div>
+        <div>
+          <img class="resize" src="data:image/png;base64, <%= restaurant.photo %>" alt="" />
+        </div>
+        <div>
+          
+        </div>
+        <div>
+          <h4>
+            Name :
+            <%= restaurant.Name %>
+          </h4>
+          <form action ="listing/rate" method="post" enctype="multipart/form-data" >
+          <select>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+    <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+    <option value="9">9</option>
+  <option value="10">10</option>
+
+</select>
+<button type="submit"></button>
+</form>
+          <p>Name :
+            <%= restaurant.Name %>
+          </p>
+          <p>borough :
+            <%= restaurant.borough %>
+          </p>
+          <p>cuisine :
+            <%= restaurant.cuisine %>
+          </p>
+          <p>Street :
+            <%= restaurant.address.street %>
+          </p>
+          <p>building :
+            <%= restaurant.address.building %>
+          </p>
+          <p>zipcode :
+            <%= restaurant.address.zipcode %>
+          </p>
+           <tr>
+                  <td><b>Created by</b></td>
+                  <td>
+                    <%= restaurant.owner%>
+                  </td>
+                </tr>
+          <
+          <div>
+            <div style="cursor: pointer;" onclick="window.open('https://maps.google.com/?q=<%= restaurant.address.Latitude %>,<%= restaurant.address.Longitude %>&zoom=18','mywindow');">
+              <i></i>coord : [
+              <font color="#8080ff">
+                <%= restaurant.address.Latitude %>,
+                <%= restaurant.address.Longitude %>
+              </font>]
+
+            </div>
+          </div>
+
+          <div>
+
+            <div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%   }); %>
+
+
+
+
+  </div>
+</div>
+</div>
+
+
+<p> </p>
+<P> </p>
+
+
+<p> </p>
+<P> </p>
+
+</html>

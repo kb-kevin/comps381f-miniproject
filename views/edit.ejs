@@ -1,0 +1,87 @@
+
+  <br>
+<div>
+    <div>
+		<form role="form" method="post" action="/edit" enctype="multipart/form-data" >
+			<h2>Edit Restaurant</h2>
+
+            <br>
+			<div>
+      <label>Restaurant ID</label>
+			<input name="id" readonly="true" type="text" value="<% restaurants.forEach(function(restaurant) { %><%=restaurant.ID%><%}) %>">
+
+
+		</div>
+    <div>
+      <br><label>Name</label>
+    <input name="name" type="text"value="<%  restaurants.forEach(function(restaurant) { %><%=restaurant.Name%> <%   }) %>" required>
+
+
+  </div>
+  <div>
+  <br><label>borough</xlabel>
+  <input name="borough" type="text" value = "<% restaurants.forEach(function(restaurant) { %><%=restaurant.borough%> <%   }) %>">
+
+</div>
+
+<div>
+<br><label>cuisine</label>
+<input name="cuisine" type="text" value="<%  restaurants.forEach(function(restaurant) { %><%= restaurant.cuisine %> <%   }) %>">
+
+</div>
+
+
+<div>
+<br><label>photo</label>
+<p><input name="photo" type="file"  accept="image/*">
+</div>
+
+
+<div>
+<label>photo mimetype</label>
+<input name="photomimetype" readonly="true" type="text" value="---">
+
+</div>
+
+<div>
+<br><label>Street</label>
+<input name="Street" type="text" value="<%  restaurants.forEach(function(restaurant) { %><%= restaurant.address.street %> <%   }) %>">
+
+</div>
+
+<div>
+<label>building</label>
+<input name="building" type="text" value="<%  restaurants.forEach(function(restaurant) { %><%= restaurant.address.building %> <%   }) %>">
+
+</div>
+
+<div>
+<br><label>zipcode</label>
+<input name="zipcode" type="text" value="<%  restaurants.forEach(function(restaurant) { %><%= restaurant.address.zipcode %> <%   }) %>">
+
+</div>
+
+<div>
+<br><label>coord.Latitude</label>
+<input name="Latitude" type="text" value="<%  restaurants.forEach(function(restaurant) { %><%= restaurant.address.Latitude %> <%   }) %>">
+
+</div>
+
+<div>
+<label>coord.Longitude</label>
+<input name="Longitude" type="text" value="<%  restaurants.forEach(function(restaurant) { %><%= restaurant.address.Longitude %> <%   }) %>">
+
+
+<div>
+<br><label>Owner</label>
+<input name="owner" readonly="true" type="text" value="<%  restaurants.forEach(function(restaurant) { %><%= restaurant.owner %> <%   }) %>">
+
+
+</div>
+          <br><button type="Submit">Sumbit</button>
+
+		</form>
+
+
+	</div>
+</div>
